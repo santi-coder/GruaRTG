@@ -248,6 +248,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e0561e00ec51cf4492048f27548a37d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  personaje: {fileID: 0}
+  walkSpeed: 6
+  runSpeed: 10
+  jumpSpeed: 8
+  gravity: 20
 --- !u!1 &84693977
 GameObject:
   m_ObjectHideFlags: 0
@@ -1708,6 +1713,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1722426974}
+  - component: {fileID: 1722426975}
   m_Layer: 0
   m_Name: Piso
   m_TagString: Untagged
@@ -1747,6 +1753,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1722426975
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1722426973}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 61.292965, y: 1.1246679, z: 120.56343}
+  m_Center: {x: -0.08891106, y: -0.4363376, z: -12.956902}
 --- !u!1001 &1733827669
 PrefabInstance:
   m_ObjectHideFlags: 0

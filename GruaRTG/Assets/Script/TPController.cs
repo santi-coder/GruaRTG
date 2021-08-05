@@ -6,12 +6,16 @@ public class TPController : MonoBehaviour
 {
     public CharacterController personaje;
 
-    public float walkSpeed = 6.0f;
-    public float runSpeed = 10.0f;
-    public float jumpSpeed = 8.0f;
-    public float gravity = 20.0f;
+    [Header("Variables movimiento")]
 
-    private Vector3 move = Vector3.zero;
+    public float speed = 0.0f;
+    public float runSpeed = 0.0f;
+    public float turnSmoothTime = 0.1f;
+    private float turnSmoothVeelocity;
+    private float targetAngle;
+    public Transform cam;
+
+    Vector3 direccion; 
 
     void Start()
     {
@@ -21,23 +25,33 @@ public class TPController : MonoBehaviour
     
     void Update()
     {
-        if (personaje.isGrounded)
+        if (Input.GetKey(KeyCode.LeftShift))
         {
-            move = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
-            if (Input.GetKey(KeyCode.LeftShift))
-            {
-                move = transform.TransformDirection(move) * runSpeed;
-            }
-            else
-            {
-                move = transform.TransformDirection(move) * walkSpeed;
-            }
-            if (Input.GetKey(KeyCode.Space))
-            {
-                move.y = jumpSpeed;
-            }
+            speed = 10.0f;
         }
-        move.y -= gravity * Time.deltaTime;
-        personaje.Move(move * Time.deltaTime);
+        else
+        {
+            speed = 6.0f;
+        }
+
+        float horizontal = Input.GetAxisRaw("Horizontal");
+        float vertical = Input.GetAxisRaw("Vertical");
+
+        direccion = new Vector3(horizontal, 0.0f, vertical).normalized;
+
+      
+        if (direccion.magnitude >= 0.1f)
+        {
+            
+            targetAngle = Mathf.Atan2(direccion.x, direccion.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
+
+            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVeelocity, turnSmoothTime);
+
+            Vector3 moveDir = Quaternion.Euler(0.0f, targetAngle, 0.0f) * Vector3.forward;
+
+            transform.rotation = Quaternion.Euler(0.0f, angle, 0.0f);
+            personaje.Move(moveDir.normalized * speed * Time.deltaTime);
+        }   
+        
     }
 }

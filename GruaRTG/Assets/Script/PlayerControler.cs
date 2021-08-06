@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class PlayerControler : MonoBehaviour
 {
-    public CharacterController player;
+    CharacterController player;
 
     public float walkSpeed = 6.0f;
     public float runSpeed = 10.0f;
     public float jumpSpeed = 8.0f;
-    float gravity = 20.0f;
+    public float gravity = 20.0f;
 
     private Vector3 move = Vector3.zero;
     
@@ -20,12 +20,12 @@ public class PlayerControler : MonoBehaviour
     }
 
     
-    void Update()
+    void FixedUpdate()
     {
+        Debug.Log(player.isGrounded);
         if (player.isGrounded)
         {
             move = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));
-            Debug.Log(move);
 
             if (Input.GetKey(KeyCode.LeftShift))
             {
@@ -40,10 +40,9 @@ public class PlayerControler : MonoBehaviour
             {
                 move.y = jumpSpeed;   
             }
-
-            player.Move(move * Time.deltaTime);
-            move.y -= gravity * Time.deltaTime; 
         }
-            
+        
+        move.y -= gravity * Time.deltaTime;
+        player.Move(move * Time.deltaTime);
     }
 }

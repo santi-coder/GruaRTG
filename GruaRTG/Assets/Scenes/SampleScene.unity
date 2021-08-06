@@ -852,8 +852,8 @@ CharacterController:
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: -0.09, z: 0}
+  m_MinMoveDistance: 0
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &512067079
 Transform:
   m_ObjectHideFlags: 0
@@ -862,7 +862,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 512067077}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.1686535, y: 1.09, z: -14.746207}
+  m_LocalPosition: {x: 0, y: 1, z: -14.31}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 59434966}
@@ -882,10 +882,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79a136d09b1741d43aaab6a257180cba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
   walkSpeed: 6
   runSpeed: 10
   jumpSpeed: 8
+  gravity: 20
 --- !u!1001 &578237395
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1847,8 +1847,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 61.21132, y: 0.99630636, z: 120.31255}
-  m_Center: {x: 0.002650261, y: -0.44942573, z: -12.847675}
+  m_Size: {x: 7.5888023, y: 0.9666497, z: 11.417934}
+  m_Center: {x: -1.5576019, y: -0.46425405, z: -12.558384}
 --- !u!1001 &1733827669
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -886,6 +886,11 @@ MonoBehaviour:
   runSpeed: 10
   jumpSpeed: 8
   gravity: 20
+  cam: {fileID: 157882595}
+  velHorizontal: 3
+  velVertical: 2
+  limitVerticalMax: 60
+  limitVerticalMin: -65
 --- !u!1001 &578237395
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -10,9 +10,14 @@ public class PlayerControler : MonoBehaviour
     public float runSpeed = 10.0f;
     public float jumpSpeed = 8.0f;
     public float gravity = 20.0f;
-
     private Vector3 move = Vector3.zero;
-    
+
+    public Camera cam;
+    public float velHorizontal = 3.0f;
+    public float velVertical = 2.0f;
+    public float limitVerticalMax = 60.0f;
+    public float limitVerticalMin = -65.0f;
+    float horizontalMouse, verticalMouse;
 
     void Start()
     {
@@ -22,7 +27,14 @@ public class PlayerControler : MonoBehaviour
     
     void FixedUpdate()
     {
-        Debug.Log(player.isGrounded);
+        horizontalMouse = velHorizontal * Input.GetAxis("Mouse X");
+        verticalMouse += velVertical * Input.GetAxis("Mouse Y");
+        
+        verticalMouse = Mathf.Clamp(verticalMouse, limitVerticalMin, limitVerticalMax);
+        cam.transform.localEulerAngles = new Vector3(-verticalMouse, 0.0f, 0.0f);
+        transform.Rotate(0, horizontalMouse, 0);
+        
+        
         if (player.isGrounded)
         {
             move = new Vector3(Input.GetAxis("Horizontal"), 0.0f, Input.GetAxis("Vertical"));

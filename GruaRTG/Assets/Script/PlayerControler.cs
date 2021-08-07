@@ -74,5 +74,6 @@ public class PlayerControler : MonoBehaviour
 
         animator.SetFloat("velX", Input.GetAxis("Horizontal"));
         animator.SetFloat("velZ", Input.GetAxis("Vertical"));
+        animator.SetBool("Escalera", false);
     }   
 }

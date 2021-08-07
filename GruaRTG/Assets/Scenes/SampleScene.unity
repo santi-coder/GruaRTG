@@ -1794,8 +1794,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5479717, y: 0.03741455, z: 0.6972577}
-  m_Center: {x: -0.43329144, y: -2.200657, z: 0.0033637583}
+  m_Size: {x: 0.64404106, y: 0.03741455, z: 1.6150682}
+  m_Center: {x: -0.6580105, y: -2.200657, z: 0.058692813}
 --- !u!1 &1716368966
 GameObject:
   m_ObjectHideFlags: 0
@@ -2082,8 +2082,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.34069443, y: 3.0203648, z: 0.6972577}
-  m_Center: {x: -0.3296528, y: -0.7091818, z: 0.0033637583}
+  m_Size: {x: 0.34069443, y: 3.0661778, z: 0.6972577}
+  m_Center: {x: -0.3296528, y: -0.68627524, z: 0.0033637583}
 --- !u!114 &2110295728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9029,6 +9029,7 @@ GameObject:
   - component: {fileID: 7142933969929374804}
   - component: {fileID: 415330347429999461}
   - component: {fileID: 3816654056432145679}
+  - component: {fileID: 6155131840767387695}
   m_Layer: 0
   m_Name: Box007
   m_TagString: Untagged
@@ -9036,6 +9037,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!65 &6155131840767387695
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6155131840767387694}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.4276414, y: 1.0271885, z: 0.67056584}
+  m_Center: {x: -0.046961308, y: -0.009906054, z: 0.19294393}
 --- !u!4 &6174287938496839419
 Transform:
   m_ObjectHideFlags: 0

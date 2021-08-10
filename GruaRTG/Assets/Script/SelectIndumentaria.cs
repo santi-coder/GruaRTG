@@ -12,7 +12,12 @@ public class SelectIndumentaria : MonoBehaviour
     private GameObject personajeInicial;
     private Transform trPersonajeInicial;
     private GameObject operadorGrua;
-    private Transform trOperadorGrua; 
+    private Transform trOperadorGrua;
+
+    [Header("Opciones de UI")]
+    public GameObject texto;
+    GameObject ultimoReconocido = null;
+    //public Texture2D puntero;
     
  
 
@@ -25,6 +30,8 @@ public class SelectIndumentaria : MonoBehaviour
 
         operadorGrua = GameObject.Find("PersonajeGrua");
         trOperadorGrua = operadorGrua.GetComponent<Transform>();
+
+        texto.SetActive(false);
     }
 
    
@@ -34,10 +41,12 @@ public class SelectIndumentaria : MonoBehaviour
         Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * distancia, Color.red);
         
         RaycastHit hit;
+
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, distancia, mask))
         {
-            Debug.Log("estoy por fuera");
-            
+            Deselected();
+            SelectedObjects(hit.transform);
+
             if (hit.collider.tag == "Pantalones" && Input.GetKey(KeyCode.E))
             {
                 trPersonajeInicial.GetChild(2).gameObject.SetActive(false);
@@ -64,6 +73,41 @@ public class SelectIndumentaria : MonoBehaviour
                 trOperadorGrua.GetChild(1).gameObject.SetActive(true);
                 hit.collider.gameObject.SetActive(false);
             }
+        } 
+        else
+        {
+            Deselected();
         }
+    }
+
+    void SelectedObjects(Transform transform)
+    {
+        transform.GetComponent<MeshRenderer>().material.color = Color.green;
+        ultimoReconocido = transform.gameObject;
+    }
+
+    void Deselected()
+    {
+        if (ultimoReconocido != null)
+        {
+            ultimoReconocido.GetComponent<Renderer>().material.color = Color.white;
+            ultimoReconocido = null;
+        }
+    }
+
+    void OnGUI()
+    {
+        //Rect rect = new Rect(Screen.width / 2, Screen.height / 2, puntero.width, puntero.height);
+        //GUI.DrawTexture(rect, puntero);
+        
+        if (ultimoReconocido != null)
+        {
+            texto.SetActive(true);
+        }
+        else
+        {
+            texto.SetActive(false);
+        }
+
     }
 }

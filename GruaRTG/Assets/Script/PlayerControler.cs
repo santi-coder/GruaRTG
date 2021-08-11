@@ -17,8 +17,8 @@ public class PlayerControler : MonoBehaviour
     [Header("Opciones de Camara")]
 
     public Camera cam;
-    public float velHorizontal = 3.0f;
-    public float velVertical = 2.0f;
+    public float velHorizontal = 2.0f;
+    public float velVertical = 1.5f;
     public float limitVerticalMax = 60.0f;
     public float limitVerticalMin = -65.0f;
     float horizontalMouse, verticalMouse;

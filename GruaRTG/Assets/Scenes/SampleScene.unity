@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: bb2e7f56b05ace94a8bc4239c4fb4fa4, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -18343,11 +18343,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6529415330526082146, guid: be3a74ee4c9d4d899462b72a41f62728, type: 3}
       propertyPath: m_LocalScale.x
-      value: 50
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6529415330526082146, guid: be3a74ee4c9d4d899462b72a41f62728, type: 3}
       propertyPath: m_LocalScale.z
-      value: 50
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6529415330526082146, guid: be3a74ee4c9d4d899462b72a41f62728, type: 3}
       propertyPath: m_LocalPosition.x
@@ -24086,6 +24086,7 @@ GameObject:
   - component: {fileID: 6840455309318081453}
   - component: {fileID: 80707334186507533}
   - component: {fileID: 2962047225426233393}
+  - component: {fileID: 1750519539678746534}
   m_Layer: 0
   m_Name: Box056
   m_TagString: Untagged
@@ -24093,6 +24094,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!64 &1750519539678746534
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1750519539678746533}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -5549144137156815563, guid: 3888afb560f0b5746a514e6d58a81982, type: 3}
 --- !u!4 &1750591461468921683
 Transform:
   m_ObjectHideFlags: 0
@@ -24396,6 +24411,7 @@ GameObject:
   - component: {fileID: 6758151567559524844}
   - component: {fileID: 7914512954806159574}
   - component: {fileID: 4233738533958180893}
+  - component: {fileID: 1819420552737670932}
   m_Layer: 0
   m_Name: Box132
   m_TagString: Untagged
@@ -24403,6 +24419,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!64 &1819420552737670932
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1819420552737670931}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2006463734286399825, guid: 3888afb560f0b5746a514e6d58a81982, type: 3}
 --- !u!1 &1838762767973529545
 GameObject:
   m_ObjectHideFlags: 0
@@ -28639,6 +28669,7 @@ GameObject:
   - component: {fileID: 2440055330280384564}
   - component: {fileID: 5786625921968651174}
   - component: {fileID: 8358683098851203542}
+  - component: {fileID: 3353901479877262058}
   m_Layer: 0
   m_Name: Box062
   m_TagString: Untagged
@@ -28646,6 +28677,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!64 &3353901479877262058
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3353901479877262057}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 5062258218628926779, guid: 3888afb560f0b5746a514e6d58a81982, type: 3}
 --- !u!23 &3364807054064150291
 MeshRenderer:
   m_ObjectHideFlags: 0

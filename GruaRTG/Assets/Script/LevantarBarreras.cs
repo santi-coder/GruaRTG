@@ -11,6 +11,8 @@ public class LevantarBarreras : MonoBehaviour
     public GameObject salaControl;
     public Transform trSalaControl;
 
+    public GameObject goAnim;
+    public Animator animator;
     void Start()
     {
         texto1.SetActive(false);
@@ -18,6 +20,8 @@ public class LevantarBarreras : MonoBehaviour
 
         salaControl = GameObject.Find("TorreDeControl");
         trSalaControl = salaControl.GetComponent<Transform>().GetChild(0).transform;
+
+        animator = goAnim.GetComponent<Animator>();
 
     }
 
@@ -45,6 +49,8 @@ public class LevantarBarreras : MonoBehaviour
         texto2.SetActive(false);
         trSalaControl.GetComponent<MeshRenderer>().material.color = Color.gray;
         yield return new WaitForSeconds(1.0f);
-        
+        animator.SetBool("Subir", true);
+        yield return new WaitForSeconds(8.0f);
+        animator.SetBool("Bajar", true);        
     }
 }

@@ -13,7 +13,7 @@ EditorBuildSettings:
     guid: 433ad236730efcf4084036363e13b169
   - enabled: 1
     path: Assets/Scenes/SubirGrua.unity
-    guid: a59f637b4b915704497cbb9524576686
+    guid: 26e27b4ab413e3549b7fa0db3cda3d89
   - enabled: 1
     path: Assets/Scenes/OperarGrua.unity
     guid: 94b9a333996baa54c8eb813465d26e9f

@@ -6,7 +6,7 @@ public class SelectIndumentaria : MonoBehaviour
 {
     [Header("Opciones Raycast")]
     LayerMask mask;
-    float distancia = 5.0f;
+    float distancia = 2.5f;
 
     [Header("Opciones GameObject")]
     private GameObject personajeInicial;
@@ -18,6 +18,8 @@ public class SelectIndumentaria : MonoBehaviour
     public GameObject texto;
     GameObject ultimoReconocido = null;
     //public Texture2D puntero;
+
+    public List<int> Comprobacion = new List<int>();
     
  
 
@@ -37,7 +39,6 @@ public class SelectIndumentaria : MonoBehaviour
    
     void Update()
     {
-       
         Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * distancia, Color.red);
         
         RaycastHit hit;
@@ -52,6 +53,7 @@ public class SelectIndumentaria : MonoBehaviour
                 trPersonajeInicial.GetChild(2).gameObject.SetActive(false);
                 trOperadorGrua.GetChild(5).gameObject.SetActive(true);
                 hit.collider.gameObject.SetActive(false);
+                Comprobacion.Add(1);
             }
 
             if (hit.collider.tag == "Chaleco" && Input.GetKey(KeyCode.E))
@@ -65,6 +67,7 @@ public class SelectIndumentaria : MonoBehaviour
                 trOperadorGrua.GetChild(6).gameObject.SetActive(true);
                 trOperadorGrua.GetChild(7).gameObject.SetActive(true);
                 hit.collider.gameObject.SetActive(false);
+                Comprobacion.Add(2);
             }
 
             if (hit.collider.tag == "Botas" && Input.GetKey(KeyCode.E))
@@ -72,6 +75,7 @@ public class SelectIndumentaria : MonoBehaviour
                 trPersonajeInicial.GetChild(3).gameObject.SetActive(false);
                 trOperadorGrua.GetChild(1).gameObject.SetActive(true);
                 hit.collider.gameObject.SetActive(false);
+                Comprobacion.Add(3);
             }
         } 
         else

@@ -29,11 +29,5 @@ public class GruaControlCamara : MonoBehaviour
         horizontalMouse = Mathf.Clamp(horizontalMouse, limitHorizontalMin, limitHorizontalMax);
 
         transform.localEulerAngles = new Vector3(-verticalMouse, horizontalMouse, 0.0f);
-        
-        
-        
-        
-        Debug.Log("Horizontal" + horizontalMouse);
-        Debug.Log("Vertical" + verticalMouse);
     }
 }

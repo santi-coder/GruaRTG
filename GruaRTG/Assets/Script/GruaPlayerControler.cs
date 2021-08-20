@@ -7,7 +7,7 @@ public class GruaPlayerControler : MonoBehaviour
     public WheelCollider[] WCs;
     public GameObject[] Ruedas;
     public GameObject[] TrenMotriz;
-    public float torqueMotor = 100.0f;
+    public float torqueMotor = 200.0f;
     public float angMaximo = 90.0f;
     public GameObject conjuntoUno;
     public float fuerzaFrenado = 300.0f;

@@ -10,11 +10,13 @@ public class GruaControladorTrenSup : MonoBehaviour
     public GameObject acopleCont;
     public Rigidbody rbAcopleCont; 
     public float fuerzaVertical = 1000.0f;
-    
+    //public FixedJoint fjAcopleCont;
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         rbAcopleCont = acopleCont.GetComponent<Rigidbody>();
+        //fjAcopleCont = acopleCont.GetComponent<FixedJoint>();
     }
 
 
@@ -24,7 +26,6 @@ public class GruaControladorTrenSup : MonoBehaviour
         {
             rb.AddForce(-empujeCarro, 0, 0);
         }
-
         if (Input.GetKey(KeyCode.M))
         {
             rb.AddForce(empujeCarro, 0, 0);
@@ -37,6 +38,12 @@ public class GruaControladorTrenSup : MonoBehaviour
         {
             rbAcopleCont.AddForce(0, -fuerzaVertical, 0);
         }
+    }
 
+    void OnTriggerStay(Collider other)
+    {
+        FixedJoint fj = other.gameObject.GetComponent<FixedJoint>();
+        fj.connectedBody = rbAcopleCont;
+        Debug.Log("sanntuuu");
     }
 }

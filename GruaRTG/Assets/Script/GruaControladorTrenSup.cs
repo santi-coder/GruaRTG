@@ -9,7 +9,7 @@ public class GruaControladorTrenSup : MonoBehaviour
     public float empujeCarro = 340.0f;
     public GameObject acopleCont;
     public Rigidbody rbAcopleCont;
-    public float fuerzaVertical = 1000.0f;
+    public float fuerzaVertical = 100.0f;
 
 
     void Start()
